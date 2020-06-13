@@ -1,0 +1,44 @@
+﻿@model PersonelOdevi.Models.User
+@{
+    ViewBag.Title = "Update";
+}
+
+@using (@Html.BeginForm("Update", "ForExample", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.ID)
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+        <br />
+        @Html.Label("AD")
+        @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+        <br />
+        @Html.Label("SOYAD")
+        @Html.TextBoxFor(x => x.SoyAd, new { @class = "form-control" })
+        <br />
+        @Html.Label("DOĞUM TARİHİ")
+        @Html.TextBoxFor(x => x.DogumTarihi, new { @class = "form-control" })
+        <br />
+        @Html.Label("TELEFON")
+        @Html.TextAreaFor(x => x.Telefon, new { @class = "form-control" })
+        <br />
+        <br />
+        @Html.Label("EMAİL")
+        @Html.TextAreaFor(x => x.Email, new { @class = "form-control" })
+        <br />
+        <br />
+        @Html.Label("ADRES")
+        @Html.TextAreaFor(x => x.Adres, new { @class = "form-control" })
+        <br />
+        <br />
+        @Html.Label("İŞE GİRİŞ TARİHİ")
+        @Html.TextAreaFor(x => x.IseGirisTarihi, new { @class = "form-control" })
+        <br />
+        <br />
+        @Html.Label("ÜNVAN")
+        @Html.TextAreaFor(x => x.Unvan, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary">Güncelle</button>
+    </div>
+}
+
+

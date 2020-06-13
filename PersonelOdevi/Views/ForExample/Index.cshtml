@@ -1,0 +1,50 @@
+﻿@model List<PersonelOdevi.Models.User>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h2>Personeller</h2>
+        <div class="card-body">
+            <table class="table table-striped">              
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>AD</th>
+                        <th>SOYAD</th>
+                        <th>Doğum Tarihi</th>
+                        <th>Email</th>
+                        <th>Adres</th>
+                        <th>Ise Giris Tarihi</th>
+                        <th>Unvan</th>
+                        <th>Edit</th>
+
+                    </tr>
+                    
+                </thead>
+                <tboy>
+                    @foreach (var user in Model)
+                    {
+                    <tr>
+                        <td>@user.ID</td>
+                        <td>@user.Ad</td>
+                        <td>@user.SoyAd</td>
+                        <td>@user.DogumTarihi</td>
+                        <td>@user.Email</td>
+                        <td>@user.Adres</td>
+                        <td>@user.IseGirisTarihi</td>
+                        <td>@user.Unvan</td>
+                        @Html.ActionLink("Update", "Update" ,new { id = user.ID },
+                         new {@class="btn btn-xs btn-warning"})
+                        @Html.ActionLink("Delete", "Delete" ,new { id = user.ID },
+                         new { @class = "btn btn-xs btn-warning" })
+
+                    </tr>
+                    }
+                </tboy>
+            </table>
+        </div>
+    </div>
+</div>
+
